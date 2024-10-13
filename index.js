@@ -6,20 +6,11 @@ const {
     geradorNomeMasculino
   } = require("gerador-nome");
 
-  const {
-    Departamento,
+const {
     Professor,
-    ChefeDepartamento,
-    Curso,
-    Disciplina,
     MatrizCurricular,
-    Aluno,
-    HistoricoAluno,
-    Tcc,
-    AlunoTcc
-  } = require('./schema.js');
-const { populate } = require('dotenv');
-
+    Aluno
+} = require('./schema.js');
 
 mongoose.connect(process.env.MONGODB_URI, {
     user: process.env.MONGODB_USER,
@@ -30,86 +21,100 @@ mongoose.connect(process.env.MONGODB_URI, {
     .then(() => console.log('Connected to MongoDB...'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
 
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const getRandomNota = () => parseFloat((Math.random() * 10).toFixed(1));
 
 const main = async () => {
-    const departamento = await Departamento.create({
-        nome: geradorNome()
+    const matrizCurricular1 = await MatrizCurricular.create({
+        curso: {
+            id: 1,
+            nome: 'Engenharia da Computação',
+        },
+        disciplinas: [
+            { nome: 'Calculo I', codigo: 'MAT101' },
+            { nome: 'Física I', codigo: 'FIS101' },
+            { nome: 'Introdução à Computação', codigo: 'COMP101' },
+            { nome: 'Banco de Dados I', codigo: 'BD101' },
+            { nome: 'Programação Orientada a Objetos', codigo: 'POO101' },
+            { nome: 'Automatização e Robótica', codigo: 'AR101' }
+        ],
     });
-    const professor = await Professor.create({
-        nome: geradorNomeMasculino(),
-        departamento_id: departamento._id
-    });
-    const chefeDepartamento = await ChefeDepartamento.create({
-        departamento_id: departamento._id,
-        chefe_id: professor._id
-    });
-    const curso = await Curso.create({
-        nome: geradorNome(),
-        departamento_id: departamento._id
-    });
-    const disciplina = await Disciplina.create({
-        codigo: 10,
-        nome: geradorNome(),
-        professor_id: professor._id,
-        departamento_id: departamento._id
 
+    const matrizCurricular2 = await MatrizCurricular.create({
+        curso: {
+            id: 2,
+            nome: 'Ciência da Computação',
+        },
+        disciplinas: [
+            { nome: 'Calculo I', codigo: 'MAT101' },
+            { nome: 'Física I', codigo: 'FIS101' },
+            { nome: 'Introdução à Computação', codigo: 'COMP101' },
+            { nome: 'Banco de Dados I', codigo: 'BD101' },
+            { nome: 'Programação Orientada a Objetos', codigo: 'POO101' },
+            { nome: 'Estrutura de Dados', codigo: 'ED101' },
+            { nome: 'Inteligência Artificial', codigo: 'IA101' }
+        ],
     });
-    const matrizCurricular = await MatrizCurricular.create({
-        semestre: 1,
-        curso_id: curso._id,
-        disciplina_id: disciplina._id
-    });
-    const aluno = await Aluno.create({
-        nome: geradorNomeMasculino(),
-        RA: geradorNome(),
-        curso_id: curso._id,
-        semestre: 1
-    });
-    const historicoAluno = await HistoricoAluno.create({
-        aluno_id: aluno._id,
-        disciplina_id: disciplina._id,
-        semestre: 1,
-        ano: 2022,
-        nota: 10
-    });
-    const tcc = await Tcc.create({
+
+    // Criar professores com disciplinas aleatórias
+    const professor = await Professor.create({
         nome: geradorNome(),
-        orientador_id: professor._id
+        departamento: 'Departamento de Ciência da Computação',
+        isChefe: true,
+        disciplinas: matrizCurricular2.disciplinas.map(disciplina => ({
+            nome: disciplina.nome,
+            codigo: disciplina.codigo,
+            semestre: getRandomInt(1, 2),
+            ano: getRandomInt(2020, 2024)
+        }))
     });
-    const alunoTcc = await AlunoTcc.create({
-        aluno_id: aluno._id,
-        tcc_id: tcc._id
-    });
+
+    
+    const gerarHistorico = (disciplinas) => {
+        return disciplinas.map(disciplina => {
+            const nota = getRandomNota();
+            return {
+                disciplina: disciplina.nome,
+                codigo: disciplina.codigo,
+                semestre: getRandomInt(1, 2),
+                ano: getRandomInt(2020, 2024),
+                nota: nota
+            };
+        });
+    };
+
+    
+    for (let i = 0; i < 10; i++) {
+        const cursoId = getRandomInt(1, 2);
+        const curso = cursoId === 1 ? matrizCurricular1 : matrizCurricular2;
+        
+        // Criar um histórico de disciplinas para o aluno
+        const historico = gerarHistorico(curso.disciplinas);
+
+        // Verifica se o aluno passou (notas >= 6)
+
+        await Aluno.create({
+            nome: geradorNome(),
+            RA: 'RA' + Math.floor(Math.random() * 100000),
+            curso: {
+                id: cursoId,
+                nome: curso.curso.nome
+            },
+            historico: historico,
+            tcc: {
+                id: getRandomInt(1, 10),
+                nome: 'Projeto Final - ' + curso.curso.nome,
+                orientador: {
+                    id: professor._id,
+                    nome: professor.nome
+                }
+            },
+            semestre: getRandomInt(1, 8)
+        });
+    }
+
+    console.log('Dados inseridos com sucesso!');
 };
 
 main();
-
-const buscarAlunoPorNome = async (nomeAluno) => {
-    try {
-        const aluno = await Aluno.findOne({ nome: nomeAluno }) // Busca aluno pelo nome
-            .populate('curso_id') // Faz o populate da referência para o curso
-            .populate({
-                path: 'curso_id',
-                populate: {
-                    path: 'departamento_id',
-                    populate: {
-                        path: 'nome'
-                    }
-                }
-            })
-            .exec(); // Executa a query
-
-        if (!aluno) {
-            console.log('Aluno não encontrado.');
-            return;
-        }
-
-        console.log('Aluno com relações populadas:', aluno);
-    } catch (err) {
-        console.error('Erro ao buscar aluno:', err);
-    }
-};
-
-// Exemplo de chamada da função
-const nomeAluno = 'Radamés'; // Substitua pelo nome real do aluno
-buscarAlunoPorNome(nomeAluno);
