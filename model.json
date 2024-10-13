@@ -1,0 +1,83 @@
+{
+    "aluno": {
+      "id": 1,
+      "nome": "João Silva",
+      "RA": "123456",
+      "curso": {
+        "id": 1,
+        "nome": "Engenharia",
+        "departamento": {
+          "id": 1,
+          "nome": "Departamento de Ciências Exatas",
+          "chefe_departamento": {
+            "id": 5,
+            "nome": "Prof. João Souza"
+          }
+        },
+        "matriz_curricular": [
+          {
+            "disciplina": {
+              "id": 1,
+              "codigo": "MAT101",
+              "nome": "Matemática",
+              "semestre": 1,
+              "professor": {
+                "id": 2,
+                "nome": "Prof. Maria Oliveira",
+                "departamento": {
+                  "id": 1,
+                  "nome": "Departamento de Ciências Exatas"
+                }
+              }
+            }
+          },
+          {
+            "disciplina": {
+              "id": 2,
+              "codigo": "FIS102",
+              "nome": "Física",
+              "semestre": 2,
+              "professor": {
+                "id": 3,
+                "nome": "Prof. Carlos Andrade",
+                "departamento": {
+                  "id": 1,
+                  "nome": "Departamento de Ciências Exatas"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "semestre": 5,
+      "historico": [
+        {
+          "disciplina": {
+            "id": 1,
+            "nome": "Matemática"
+          },
+          "semestre": 1,
+          "ano": 2020,
+          "nota": 8.5
+        },
+        {
+          "disciplina": {
+            "id": 2,
+            "nome": "Física"
+          },
+          "semestre": 2,
+          "ano": 2020,
+          "nota": 7.0
+        }
+      ],
+      "TCC": {
+        "id": 1,
+        "nome": "Aplicação de IA em Robótica",
+        "orientador": {
+          "id": 3,
+          "nome": "Prof. Carlos Andrade"
+        }
+      }
+    }
+  }
+  
