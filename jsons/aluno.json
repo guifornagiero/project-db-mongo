@@ -1,0 +1,512 @@
+{
+  "1": {
+    "nome": "Guilherme F",
+    "RA": "22.122.016-3",
+    "curso": {
+      "id": 10,
+      "nome": "Engenharia de Software"
+    },
+    "tcc": {
+      "id": 101,
+      "nome": "Estudo de caso: Aplicação de Finanças"
+    },
+    "semestre": 10,
+    "historico": [
+      {
+        "disciplina": "Lógica de Programação",
+        "codigo": "LPG",
+        "semestre": 1,
+        "ano": 2020,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Estruturas de Dados",
+        "codigo": "ESD",
+        "semestre": 2,
+        "ano": 2020,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Algoritmos",
+        "codigo": "ALG",
+        "semestre": 3,
+        "ano": 2021,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Engenharia de Requisitos",
+        "codigo": "ERQ",
+        "semestre": 4,
+        "ano": 2021,
+        "nota": 8.0
+      },
+      {
+        "disciplina": "Arquitetura de Software",
+        "codigo": "ARS",
+        "semestre": 5,
+        "ano": 2022,
+        "nota": 9.3
+      },
+      {
+        "disciplina": "Testes de Software",
+        "codigo": "TSF",
+        "semestre": 6,
+        "ano": 2022,
+        "nota": 8.0
+      },
+      {
+        "disciplina": "Metodologias Ágeis",
+        "codigo": "MAG",
+        "semestre": 7,
+        "ano": 2023,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Desenvolvimento Web",
+        "codigo": "DWX",
+        "semestre": 8,
+        "ano": 2023,
+        "nota": 9.5
+      },
+      {
+        "disciplina": "Banco de Dados",
+        "codigo": "BDB",
+        "semestre": 9,
+        "ano": 2024,
+        "nota": 5.9
+      },
+      {
+        "disciplina": "Gerência de Projetos",
+        "codigo": "GPJ",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 6.0
+      }
+    ]
+  },
+  "2": {
+    "nome": "Ana L",
+    "RA": "22.122.017-4",
+    "curso": {
+      "id": 20,
+      "nome": "Medicina"
+    },
+    "tcc": {
+      "id": 102,
+      "nome": "Impacto da Nutrição na Saúde"
+    },
+    "semestre": 10,
+    "historico": [
+      {
+        "disciplina": "Anatomia Humana",
+        "codigo": "ANH",
+        "semestre": 1,
+        "ano": 2020,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Fisiologia",
+        "codigo": "FIS",
+        "semestre": 2,
+        "ano": 2020,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Bioquímica",
+        "codigo": "BQC",
+        "semestre": 3,
+        "ano": 2021,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Farmacologia",
+        "codigo": "FAR",
+        "semestre": 4,
+        "ano": 2021,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Patologia",
+        "codigo": "PAT",
+        "semestre": 5,
+        "ano": 2022,
+        "nota": 8.7
+      },
+      {
+        "disciplina": "Clínica Médica",
+        "codigo": "CLM",
+        "semestre": 6,
+        "ano": 2022,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Cirurgia",
+        "codigo": "CIR",
+        "semestre": 7,
+        "ano": 2023,
+        "nota": 9.1
+      },
+      {
+        "disciplina": "Pediatria",
+        "codigo": "PED",
+        "semestre": 8,
+        "ano": 2023,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Ginecologia e Obstetrícia",
+        "codigo": "GOB",
+        "semestre": 9,
+        "ano": 2024,
+        "nota": 8.9
+      },
+      {
+        "disciplina": "Saúde Pública",
+        "codigo": "SPB",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 9.4
+      }
+    ]
+  },
+  "3": {
+    "nome": "Rafael S",
+    "RA": "22.122.020-7",
+    "curso": {
+      "id": 10,
+      "nome": "Engenharia de Computação"
+    },
+    "tcc": {
+      "id": 101,
+      "nome": "Estudo de caso: Aplicação de Finanças"
+    },
+    "semestre": 10,
+    "historico": [
+      {
+        "disciplina": "Lógica de Programação",
+        "codigo": "LPG",
+        "semestre": 1,
+        "ano": 2020,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Estruturas de Dados",
+        "codigo": "ESD",
+        "semestre": 2,
+        "ano": 2020,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Algoritmos",
+        "codigo": "ALG",
+        "semestre": 3,
+        "ano": 2021,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Engenharia de Requisitos",
+        "codigo": "ERQ",
+        "semestre": 4,
+        "ano": 2021,
+        "nota": 8.0
+      },
+      {
+        "disciplina": "Arquitetura de Software",
+        "codigo": "ARS",
+        "semestre": 5,
+        "ano": 2022,
+        "nota": 9.3
+      },
+      {
+        "disciplina": "Testes de Software",
+        "codigo": "TSF",
+        "semestre": 6,
+        "ano": 2022,
+        "nota": 8.0
+      },
+      {
+        "disciplina": "Metodologias Ágeis",
+        "codigo": "MAG",
+        "semestre": 7,
+        "ano": 2023,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Desenvolvimento Web",
+        "codigo": "DWX",
+        "semestre": 8,
+        "ano": 2023,
+        "nota": 9.5
+      },
+      {
+        "disciplina": "Banco de Dados",
+        "codigo": "BDB",
+        "semestre": 9,
+        "ano": 2024,
+        "nota": 9.1
+      },
+      {
+        "disciplina": "Gerência de Projetos",
+        "codigo": "GPJ",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 9.4
+      }
+    ]
+  },
+  "4": {
+    "nome": "Juliana P",
+    "RA": "22.122.021-8",
+    "curso": {
+      "id": 20,
+      "nome": "Medicina"
+    },
+    "tcc": {
+      "id": 102,
+      "nome": "Impacto da Nutrição na Saúde"
+    },
+    "semestre": 10,
+    "historico": [
+      {
+        "disciplina": "Anatomia Humana",
+        "codigo": "ANH",
+        "semestre": 1,
+        "ano": 2020,
+        "nota": 9.1
+      },
+      {
+        "disciplina": "Fisiologia",
+        "codigo": "FIS",
+        "semestre": 2,
+        "ano": 2020,
+        "nota": 8.8
+      },
+      {
+        "disciplina": "Bioquímica",
+        "codigo": "BQC",
+        "semestre": 3,
+        "ano": 2021,
+        "nota": 9.3
+      },
+      {
+        "disciplina": "Farmacologia",
+        "codigo": "FAR",
+        "semestre": 4,
+        "ano": 2021,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Patologia",
+        "codigo": "PAT",
+        "semestre": 5,
+        "ano": 2022,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Clínica Médica",
+        "codigo": "CLM",
+        "semestre": 6,
+        "ano": 2022,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Cirurgia",
+        "codigo": "CIR",
+        "semestre": 7,
+        "ano": 2023,
+        "nota": 9.4
+      },
+      {
+        "disciplina": "Pediatria",
+        "codigo": "PED",
+        "semestre": 8,
+        "ano": 2023,
+        "nota": 9.1
+      },
+      {
+        "disciplina": "Ginecologia e Obstetrícia",
+        "codigo": "GOB",
+        "semestre": 9,
+        "ano": 2024,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Saúde Pública",
+        "codigo": "SPB",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 9.5
+      }
+    ]
+  },
+  "5": {
+    "nome": "Fernanda C",
+    "RA": "22.122.022-9",
+    "curso": {
+      "id": 30,
+      "nome": "Design Gráfico"
+    },
+    "tcc": {
+      "id": 105,
+      "nome": "Desenvolvimento de Campanha Publicitária"
+    },
+    "semestre": 10,
+    "historico": [
+      {
+        "disciplina": "Teoria das Cores",
+        "codigo": "TCB",
+        "semestre": 1,
+        "ano": 2020,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Tipografia",
+        "codigo": "TIP",
+        "semestre": 2,
+        "ano": 2020,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Design Digital",
+        "codigo": "DGD",
+        "semestre": 3,
+        "ano": 2021,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Ilustração",
+        "codigo": "ILS",
+        "semestre": 4,
+        "ano": 2021,
+        "nota": 8.8
+      },
+      {
+        "disciplina": "Fotografia",
+        "codigo": "FOT",
+        "semestre": 5,
+        "ano": 2022,
+        "nota": 9.1
+      },
+      {
+        "disciplina": "Design de Interface",
+        "codigo": "DIH",
+        "semestre": 6,
+        "ano": 2022,
+        "nota": 9.3
+      },
+      {
+        "disciplina": "Branding",
+        "codigo": "BRD",
+        "semestre": 7,
+        "ano": 2023,
+        "nota": 8.9
+      },
+      {
+        "disciplina": "Animação",
+        "codigo": "ANI",
+        "semestre": 8,
+        "ano": 2023,
+        "nota": 9.4
+      },
+      {
+        "disciplina": "Projeto Final",
+        "codigo": "PFN",
+        "semestre": 9,
+        "ano": 2024,
+        "nota": 9.5
+      },
+      {
+        "disciplina": "Gestão de Projetos de Design",
+        "codigo": "GPD",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 9.2
+      }
+    ]
+  },
+  "6": {
+    "nome": "Lucas M",
+    "RA": "22.122.023-0",
+    "curso": {
+      "id": 30,
+      "nome": "Design Gráfico"
+    },
+    "tcc": {
+      "id": 106,
+      "nome": "Impacto do Design na Comunicação Visual"
+    },
+    "semestre": 10,
+    "historico": [
+      {
+        "disciplina": "Teoria das Cores",
+        "codigo": "TCB",
+        "semestre": 1,
+        "ano": 2020,
+        "nota": 8.0
+      },
+      {
+        "disciplina": "Tipografia",
+        "codigo": "TIP",
+        "semestre": 2,
+        "ano": 2020,
+        "nota": 9.3
+      },
+      {
+        "disciplina": "Design Digital",
+        "codigo": "DGD",
+        "semestre": 3,
+        "ano": 2021,
+        "nota": 8.5
+      },
+      {
+        "disciplina": "Ilustração",
+        "codigo": "ILS",
+        "semestre": 4,
+        "ano": 2021,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Fotografia",
+        "codigo": "FOT",
+        "semestre": 5,
+        "ano": 2022,
+        "nota": 8.7
+      },
+      {
+        "disciplina": "Design de Interface",
+        "codigo": "DIH",
+        "semestre": 6,
+        "ano": 2022,
+        "nota": 9.1
+      },
+      {
+        "disciplina": "Branding",
+        "codigo": "BRD",
+        "semestre": 7,
+        "ano": 2023,
+        "nota": 8.4
+      },
+      {
+        "disciplina": "Animação",
+        "codigo": "ANI",
+        "semestre": 8,
+        "ano": 2023,
+        "nota": 9.2
+      },
+      {
+        "disciplina": "Projeto Final",
+        "codigo": "PFN",
+        "semestre": 9,
+        "ano": 2024,
+        "nota": 9.0
+      },
+      {
+        "disciplina": "Gestão de Projetos de Design",
+        "codigo": "GPD",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 8.8
+      }
+    ]
+  }
+}

@@ -41,6 +41,7 @@ const matrizCurricularSchema = new mongoose.Schema({
     {
       nome: { type: String, required: true },
       codigo: { type: String, required: true },
+      semestre: { type: Number, required: true }
     }
   ]
 });
