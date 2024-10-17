@@ -1,0 +1,56 @@
+{
+  "1": {
+    "curso": {
+      "id": 10,
+      "nome": "Engenharia de Software"
+    },
+    "disciplinas": [
+      { "codigo": "LPG", "nome": "Lógica de Programação", "semestre": 1 },
+      { "codigo": "ESD", "nome": "Estruturas de Dados", "semestre": 2 },
+      { "codigo": "ALG", "nome": "Algoritmos", "semestre": 3 },
+      { "codigo": "ERQ", "nome": "Engenharia de Requisitos", "semestre": 4 },
+      { "codigo": "ARS", "nome": "Arquitetura de Software", "semestre": 5 },
+      { "codigo": "TSF", "nome": "Testes de Software", "semestre": 6 },
+      { "codigo": "MAG", "nome": "Metodologias Ágeis", "semestre": 7 },
+      { "codigo": "DWX", "nome": "Desenvolvimento Web", "semestre": 8 },
+      { "codigo": "BDB", "nome": "Banco de Dados", "semestre": 9 },
+      { "codigo": "GPJ", "nome": "Gerência de Projetos", "semestre": 10 }
+    ]
+  },
+  "2": {
+    "curso": {
+      "id": 20,
+      "nome": "Medicina"
+    },
+    "disciplinas": [
+      { "codigo": "ANH", "nome": "Anatomia Humana", "semestre": 1 },
+      { "codigo": "FIS", "nome": "Fisiologia", "semestre": 2 },
+      { "codigo": "BQC", "nome": "Bioquímica", "semestre": 3 },
+      { "codigo": "FAR", "nome": "Farmacologia", "semestre": 4 },
+      { "codigo": "PAT", "nome": "Patologia", "semestre": 5 },
+      { "codigo": "CLM", "nome": "Clínica Médica", "semestre": 6 },
+      { "codigo": "CIR", "nome": "Cirurgia", "semestre": 7 },
+      { "codigo": "PED", "nome": "Pediatria", "semestre": 8 },
+      { "codigo": "GOB", "nome": "Ginecologia e Obstetrícia", "semestre": 9 },
+      { "codigo": "SPB", "nome": "Saúde Pública", "semestre": 10 }
+    ]
+  },
+  "3": {
+    "curso": {
+      "id": 30,
+      "nome": "Design Gráfico"
+    },
+    "disciplinas": [
+      { "codigo": "TCB", "nome": "Teoria das Cores", "semestre": 1 },
+      { "codigo": "TIP", "nome": "Tipografia", "semestre": 2 },
+      { "codigo": "DGD", "nome": "Design Digital", "semestre": 3 },
+      { "codigo": "ILS", "nome": "Ilustração", "semestre": 4 },
+      { "codigo": "FOT", "nome": "Fotografia", "semestre": 5 },
+      { "codigo": "DIH", "nome": "Design de Interface", "semestre": 6 },
+      { "codigo": "BRD", "nome": "Branding", "semestre": 7 },
+      { "codigo": "ANI", "nome": "Animação", "semestre": 8 },
+      { "codigo": "PFN", "nome": "Projeto Final", "semestre": 9 },
+      { "codigo": "GPD", "nome": "Gestão de Projetos de Design", "semestre": 10 }
+    ]
+  }
+}

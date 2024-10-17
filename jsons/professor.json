@@ -1,0 +1,106 @@
+{
+  "1": {
+    "nome": "João da Silva",
+    "departamento": "Ciência da Computação",
+    "isChefe": true,
+    "disciplinas": [
+      {
+        "disciplina": "Lógica de Programação",
+        "codigo": "LPG",
+        "semestre": 1,
+        "ano": 2020
+      },
+      {
+        "disciplina": "Estruturas de Dados",
+        "codigo": "ESD",
+        "semestre": 2,
+        "ano": 2020
+      },
+      {
+        "disciplina": "Lógica de Programação",
+        "codigo": "LPG",
+        "semestre": 1,
+        "ano": 2021
+      },
+      {
+        "disciplina": "Lógica de Programação",
+        "codigo": "LPG",
+        "semestre": 1,
+        "ano": 2022
+      },
+      {
+        "disciplina": "Testes de Software",
+        "codigo": "TSF",
+        "semestre": 6,
+        "ano": 2022
+      }
+    ],
+    "tccs": [
+      {
+        "id": 101,
+        "nome": "Estudo de caso: Aplicação de Finanças"
+      }
+    ]
+  },
+  "2": {
+    "nome": "Natália Almeida",
+    "departamento": "Oncologia",
+    "isChefe": true,
+    "disciplinas": [
+      {
+        "disciplina": "Bioquímica",
+        "codigo": "BQC",
+        "semestre": 3,
+        "ano": 2021
+      },
+      {
+        "disciplina": "Clínica Médica",
+        "codigo": "CLM",
+        "semestre": 6,
+        "ano": 2022
+      },
+      {
+        "disciplina": "Ginecologia e Obstetrícia",
+        "codigo": "GOB",
+        "semestre": 9,
+        "ano": 2024
+      }
+    ],
+    "tccs": [
+      {
+        "id": 102,
+        "nome": "Impacto da Nutrição na Saúde"
+      }
+    ]
+  },
+  "3": {
+    "nome": "Carlos Ferreira",
+    "departamento": "Artes",
+    "isChefe": true,
+    "disciplinas": [
+      {
+        "disciplina": "Teoria das Cores",
+        "codigo": "TCB",
+        "semestre": 1,
+        "ano": 2020
+      },
+      {
+        "disciplina": "Gestão de Projetos de Design",
+        "codigo": "GPD",
+        "semestre": 10,
+        "ano": 2024,
+        "nota": 9.2
+      }
+    ],
+    "tccs": [
+      {
+        "id": 105,
+        "nome": "Desenvolvimento de Campanha Publicitária"
+      },
+      {
+        "id": 106,
+        "nome": "Impacto do Design na Comunicação Visual"
+      }
+    ]
+  }
+}
