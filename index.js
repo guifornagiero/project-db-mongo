@@ -62,7 +62,6 @@ main();
 async function getAlunos() {
     try {
         const alunos = await Aluno.find({});
-
         let alunosList = [];
         for (let aluno of alunos) {
             for (let disciplina of aluno.historico) {
@@ -86,4 +85,61 @@ async function getAlunos() {
     }
 }
 
-getAlunos();
+async function getProfessores() {
+    try {
+        const professores = await Professor.find({});
+        let professoresList = [];
+        for (let professor of professores) {
+            for (let disciplina of professor.disciplinas) {
+                const newProfessor = {
+                    nomeProfessor: professor.nome,
+                    departamento: professor.departamento,
+                    nomeDisciplina: disciplina.nome,
+                    codigo: disciplina.codigo,
+                    semestre: disciplina.semestre,
+                    ano: disciplina.ano
+                }
+
+                professoresList.push(newProfessor);
+            }
+        }
+        console.log("\nQUERY 2 - HISTÓRICO DE DISCIPLINAS PROFESSOR\n");
+        console.table(professoresList);
+        
+    } catch(error) {
+        console.error("Erro ao buscar professores (query 2): ", error);
+        throw error;
+    }
+}
+
+async function getChefes() {
+    try {
+        const chefes = await Professor.find({
+            isChefe: true
+        });
+
+        let list = [];
+        for (let chefe of chefes) {
+            const newChefe = {
+                nome: chefe.nome,
+                departamento: chefe.departamento
+            }
+
+            list.push(newChefe);
+        }
+
+        console.log("\nQUERY 4 - LISTA DE CHEFES DE DEPARTAMENTOS\n");
+        console.table(list);
+    } catch (error) {
+        console.error("Erro ao buscar chefes (query 4): ", error);
+        throw error;
+    }
+}
+
+async function callQueries() {
+    await getAlunos();
+    await getProfessores();
+    await getChefes();
+}
+
+callQueries();
