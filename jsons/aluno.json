@@ -357,7 +357,7 @@
         "codigo": "TCB",
         "semestre": 1,
         "ano": 2020,
-        "nota": 9.0
+        "nota": 2.4
       },
       {
         "disciplina": "Tipografia",
@@ -477,7 +477,7 @@
         "codigo": "DIH",
         "semestre": 6,
         "ano": 2022,
-        "nota": 9.1
+        "nota": 3.2
       },
       {
         "disciplina": "Branding",
@@ -505,7 +505,7 @@
         "codigo": "GPD",
         "semestre": 10,
         "ano": 2024,
-        "nota": 8.8
+        "nota": 4.6
       }
     ]
   }
