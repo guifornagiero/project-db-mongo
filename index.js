@@ -172,24 +172,68 @@ async function getTCCS() {
   }
 }
 
-// async function getFormados() {
-//   try {
-//     const alunos = await Aluno.find({});
-//     const matrizCurricular = await MatrizCurricular.find({});
+async function getFormados() {
+  try {
+    const matrizesCurriculares = await MatrizCurricular.find({});
+    let matrizes = [];
+
+    for (let matrizCurricular of matrizesCurriculares) {
+        const m = {
+            cursoId: matrizCurricular.curso.id,
+            cursoNome: matrizCurricular.curso.nome,
+            disciplinas: []
+        }
+
+        for (let disciplina of matrizCurricular.disciplinas) {
+            m.disciplinas.push({
+                nome: disciplina.nome,
+                codigo: disciplina.codigo,
+                semestre: disciplina.semestre
+            })
+        }
+
+        matrizes.push(m);
+    }
+
+    const alunosFormados = [];
+
+    for (let curso of matrizes) {
+        const alunos = await Aluno.find({
+            'curso.id': curso.cursoId,
+            historico: {
+                $all: curso.disciplinas.map(d => ({
+                    $elemMatch: {
+                        codigo: d.codigo,
+                        nota: { $gt: 5 }
+                    }
+                }))
+            }
+        });
+
+        for (let aluno of alunos) {
+            alunosFormados.push({
+                nome: aluno.nome,
+                RA: aluno.RA,
+                curso: aluno.curso.nome
+            });
+        }
+    }
+
+    console.log("\nQUERY 3 - LISTA DE ALUNOS FORMADOS\n");
+    console.table(alunosFormados);
     
-//     const formados
-    
-//   } catch (error) {
-//     console.error("Erro ao buscar chefes (query 3): ", error);
-//     throw error;
-//   }
-// }
+  } catch (error) {
+    console.error("Erro ao buscar chefes (query 3): ", error);
+    throw error;
+  }
+}
 
 async function callQueries() {
-  await getAlunos();
-  await getProfessores();
-  await getChefes();
-  await getTCCS();
+//   await getAlunos();
+//   await getProfessores();
+//   await getChefes();
+//   await getTCCS();
+    await getFormados();
 }
 
 callQueries();
