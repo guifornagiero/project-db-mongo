@@ -136,13 +136,11 @@ async function getTCCS() {
 
     let list = [];
 
-
     alunos.forEach((aluno) => {
       if (!list.some((item) => item.nome === aluno.tcc.nome)) {
         list.push({ nome: aluno.tcc.nome });
       }
     });
-
 
     for (let tcc of list) {
       const professors = await Professor.find({
@@ -178,50 +176,53 @@ async function getFormados() {
     let matrizes = [];
 
     for (let matrizCurricular of matrizesCurriculares) {
-        const m = {
-            cursoId: matrizCurricular.curso.id,
-            cursoNome: matrizCurricular.curso.nome,
-            disciplinas: []
-        }
+      const m = {
+        cursoId: matrizCurricular.curso.id,
+        cursoNome: matrizCurricular.curso.nome,
+        disciplinas: [],
+      };
 
-        for (let disciplina of matrizCurricular.disciplinas) {
-            m.disciplinas.push({
-                nome: disciplina.nome,
-                codigo: disciplina.codigo,
-                semestre: disciplina.semestre
-            })
-        }
+      for (let disciplina of matrizCurricular.disciplinas) {
+        m.disciplinas.push({
+          nome: disciplina.nome,
+          codigo: disciplina.codigo,
+          semestre: disciplina.semestre,
+        });
+      }
 
-        matrizes.push(m);
+      matrizes.push(m);
     }
 
     const alunosFormados = [];
 
     for (let curso of matrizes) {
-        const alunos = await Aluno.find({
-            'curso.id': curso.cursoId,
-            historico: {
-                $all: curso.disciplinas.map(d => ({
-                    $elemMatch: {
-                        codigo: d.codigo,
-                        nota: { $gt: 5 }
-                    }
-                }))
-            }
-        });
+      const alunos = await Aluno.find({
+        "curso.id": curso.cursoId,
+        historico: {
+          $all: curso.disciplinas.map((d) => ({
+            $elemMatch: {
+              codigo: d.codigo,
+              nota: { $gt: 5 },
+            },
+          })),
+        },
+      });
 
-        for (let aluno of alunos) {
-            alunosFormados.push({
-                nome: aluno.nome,
-                RA: aluno.RA,
-                curso: aluno.curso.nome
-            });
-        }
+      for (let aluno of alunos) {
+        const ultimoHistorico = aluno.historico[aluno.historico.length - 1]; 
+        const anoDeFormacao = ultimoHistorico ? ultimoHistorico.ano : null; 
+
+        alunosFormados.push({
+          nome: aluno.nome,
+          RA: aluno.RA,
+          curso: aluno.curso.nome,
+          AnoDeFormacao: anoDeFormacao,
+        });
+      }
     }
 
     console.log("\nQUERY 3 - LISTA DE ALUNOS FORMADOS\n");
     console.table(alunosFormados);
-    
   } catch (error) {
     console.error("Erro ao buscar chefes (query 3): ", error);
     throw error;
@@ -229,11 +230,11 @@ async function getFormados() {
 }
 
 async function callQueries() {
-//   await getAlunos();
-//   await getProfessores();
-//   await getChefes();
-//   await getTCCS();
+    await getAlunos();
+    await getProfessores();
     await getFormados();
+    await getChefes();
+    await getTCCS();
 }
 
 callQueries();
