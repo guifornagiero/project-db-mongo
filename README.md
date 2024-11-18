@@ -88,3 +88,11 @@ aluno = new mongoose.Schema({
   semestre: { type: Number, required: true }
 });
 ```
+
+## Como rodar o projeto?
+1. Clone o projeto com o seguinte comando ```git clone https://github.com/guifornagiero/projeto-db-mongo.git```
+2. Entre na pasta do projeto com o comando ```cd projeto-db-mongo```
+3. Instale o Node.js no seu computador
+4. Altere os dados do arquivo .env para os dados enviados na tarefa do Moodle, para poder conectar no cluster do banco de dados
+5. Instale as depêndencias do projeto com o comando ```npm install```
+6. Execute o arquivo de seleção com o comando ```npm run dev```
