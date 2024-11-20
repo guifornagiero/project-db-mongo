@@ -89,6 +89,9 @@ aluno = new mongoose.Schema({
 });
 ```
 
+## Validação de Queries
+As queries utilizadas para a seleção dos dados podem ser verificadas na linha 57 do arquivo index.js, devido as limitações do mongoDB em relação à queries, foram realizados alguns joins manualmente para chegar no resultado esperado
+
 ## Como rodar o projeto?
 1. Clone o projeto com o seguinte comando ```git clone https://github.com/guifornagiero/projeto-db-mongo.git```
 2. Entre na pasta do projeto com o comando ```cd projeto-db-mongo```
